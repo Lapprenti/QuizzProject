@@ -713,11 +713,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.Android\\QuizzMotorsport.Android.csproj",
+      "projectUniqueName": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.Android\\QuizzMotorsport.Android.csproj",
       "projectName": "QuizzMotorsport.Android",
-      "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.Android\\QuizzMotorsport.Android.csproj",
+      "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.Android\\QuizzMotorsport.Android.csproj",
       "packagesPath": "C:\\Users\\Arnaud\\.nuget\\packages\\",
-      "outputPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.Android\\obj\\",
+      "outputPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -738,8 +738,8 @@
       "frameworks": {
         "monoandroid80": {
           "projectReferences": {
-            "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj": {
-              "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj"
+            "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj": {
+              "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj"
             }
           }
         }

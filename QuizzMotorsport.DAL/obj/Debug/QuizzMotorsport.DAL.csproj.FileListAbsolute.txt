@@ -1,0 +1,12 @@
+D:\QuizzProject\QuizzMotorsport.DAL\bin\Debug\QuizzMotorsport.DAL.dll.config
+D:\QuizzProject\QuizzMotorsport.DAL\bin\Debug\QuizzMotorsport.DAL.dll
+D:\QuizzProject\QuizzMotorsport.DAL\bin\Debug\QuizzMotorsport.DAL.pdb
+D:\QuizzProject\QuizzMotorsport.DAL\bin\Debug\EntityFramework.dll
+D:\QuizzProject\QuizzMotorsport.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\QuizzProject\QuizzMotorsport.DAL\bin\Debug\EntityFramework.xml
+D:\QuizzProject\QuizzMotorsport.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\QuizzProject\QuizzMotorsport.DAL\obj\Debug\QuizzMotorsport.DAL.csprojResolveAssemblyReference.cache
+D:\QuizzProject\QuizzMotorsport.DAL\obj\Debug\QuizzMotorsport.DAL.csproj.CoreCompileInputs.cache
+D:\QuizzProject\QuizzMotorsport.DAL\obj\Debug\QuizzMotorsport.DAL.csproj.CopyComplete
+D:\QuizzProject\QuizzMotorsport.DAL\obj\Debug\QuizzMotorsport.DAL.dll
+D:\QuizzProject\QuizzMotorsport.DAL\obj\Debug\QuizzMotorsport.DAL.pdb

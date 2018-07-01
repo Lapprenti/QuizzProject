@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quizzmotorsportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="joueur">
+    <Key>
+      <PropertyRef Name="idjoueur" />
+    </Key>
+    <Property Name="idjoueur" Type="smallint" Nullable="false" />
+    <Property Name="pseudo" Type="varchar" MaxLength="15" />
+    <Property Name="pourcentage" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="idquestion" />
+    </Key>
+    <Property Name="idquestion" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intitule" Type="varchar" MaxLength="128" />
+    <Property Name="image" Type="varchar" MaxLength="300" />
+    <Property Name="temps" Type="time" Precision="7" />
+    <Property Name="idquizz" Type="smallint" />
+  </EntityType>
+  <EntityType Name="quizz">
+    <Key>
+      <PropertyRef Name="idquizz" />
+    </Key>
+    <Property Name="idquizz" Type="smallint" Nullable="false" />
+    <Property Name="idjoueur" Type="smallint" Nullable="false" />
+    <Property Name="resultat" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="response">
+    <Key>
+      <PropertyRef Name="idréponse" />
+    </Key>
+    <Property Name="idréponse" Type="smallint" Nullable="false" />
+    <Property Name="idquestion" Type="smallint" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="128" />
+    <Property Name="juste" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_question_quizz">
+    <End Role="quizz" Type="Self.quizz" Multiplicity="0..1" />
+    <End Role="question" Type="Self.question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="quizz">
+        <PropertyRef Name="idquizz" />
+      </Principal>
+      <Dependent Role="question">
+        <PropertyRef Name="idquizz" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_quizz_joueur">
+    <End Role="joueur" Type="Self.joueur" Multiplicity="1" />
+    <End Role="quizz" Type="Self.quizz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="joueur">
+        <PropertyRef Name="idjoueur" />
+      </Principal>
+      <Dependent Role="quizz">
+        <PropertyRef Name="idjoueur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_response_question">
+    <End Role="question" Type="Self.question" Multiplicity="1" />
+    <End Role="response" Type="Self.response" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="question">
+        <PropertyRef Name="idquestion" />
+      </Principal>
+      <Dependent Role="response">
+        <PropertyRef Name="idquestion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="quizzmotorsportModelStoreContainer">
+    <EntitySet Name="joueur" EntityType="Self.joueur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="question" EntityType="Self.question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="quizz" EntityType="Self.quizz" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="response" EntityType="Self.response" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_question_quizz" Association="Self.FK_question_quizz">
+      <End Role="quizz" EntitySet="quizz" />
+      <End Role="question" EntitySet="question" />
+    </AssociationSet>
+    <AssociationSet Name="fk_quizz_joueur" Association="Self.fk_quizz_joueur">
+      <End Role="joueur" EntitySet="joueur" />
+      <End Role="quizz" EntitySet="quizz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_response_question" Association="Self.FK_response_question">
+      <End Role="question" EntitySet="question" />
+      <End Role="response" EntitySet="response" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

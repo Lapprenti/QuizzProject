@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quizzmotorsportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="joueur">
+    <Key>
+      <PropertyRef Name="idjoueur" />
+    </Key>
+    <Property Name="idjoueur" Type="Int16" Nullable="false" />
+    <Property Name="pseudo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="pourcentage" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="quizzs" Relationship="Self.fk_quizz_joueur" FromRole="joueur" ToRole="quizz" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="idquestion" />
+    </Key>
+    <Property Name="idquestion" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intitule" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="temps" Type="Time" Precision="7" />
+    <Property Name="idquizz" Type="Int16" />
+    <NavigationProperty Name="quizz" Relationship="Self.FK_question_quizz" FromRole="question" ToRole="quizz" />
+    <NavigationProperty Name="responses" Relationship="Self.FK_response_question" FromRole="question" ToRole="response" />
+  </EntityType>
+  <EntityType Name="quizz">
+    <Key>
+      <PropertyRef Name="idquizz" />
+    </Key>
+    <Property Name="idquizz" Type="Int16" Nullable="false" />
+    <Property Name="idjoueur" Type="Int16" Nullable="false" />
+    <Property Name="resultat" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="joueur" Relationship="Self.fk_quizz_joueur" FromRole="quizz" ToRole="joueur" />
+    <NavigationProperty Name="questions" Relationship="Self.FK_question_quizz" FromRole="quizz" ToRole="question" />
+  </EntityType>
+  <EntityType Name="response">
+    <Key>
+      <PropertyRef Name="idréponse" />
+    </Key>
+    <Property Name="idréponse" Type="Int16" Nullable="false" />
+    <Property Name="idquestion" Type="Int16" Nullable="false" />
+    <Property Name="libelle" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="juste" Type="Boolean" />
+    <NavigationProperty Name="question" Relationship="Self.FK_response_question" FromRole="response" ToRole="question" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="fk_quizz_joueur">
+    <End Role="joueur" Type="Self.joueur" Multiplicity="1" />
+    <End Role="quizz" Type="Self.quizz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="joueur">
+        <PropertyRef Name="idjoueur" />
+      </Principal>
+      <Dependent Role="quizz">
+        <PropertyRef Name="idjoueur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_question_quizz">
+    <End Role="quizz" Type="Self.quizz" Multiplicity="0..1" />
+    <End Role="question" Type="Self.question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="quizz">
+        <PropertyRef Name="idquizz" />
+      </Principal>
+      <Dependent Role="question">
+        <PropertyRef Name="idquizz" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_response_question">
+    <End Role="question" Type="Self.question" Multiplicity="1" />
+    <End Role="response" Type="Self.response" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="question">
+        <PropertyRef Name="idquestion" />
+      </Principal>
+      <Dependent Role="response">
+        <PropertyRef Name="idquestion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="quizzmotorsportEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="joueurs" EntityType="Self.joueur" />
+    <EntitySet Name="questions" EntityType="Self.question" />
+    <EntitySet Name="quizzs" EntityType="Self.quizz" />
+    <EntitySet Name="responses" EntityType="Self.response" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="fk_quizz_joueur" Association="Self.fk_quizz_joueur">
+      <End Role="joueur" EntitySet="joueurs" />
+      <End Role="quizz" EntitySet="quizzs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_question_quizz" Association="Self.FK_question_quizz">
+      <End Role="quizz" EntitySet="quizzs" />
+      <End Role="question" EntitySet="questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_response_question" Association="Self.FK_response_question">
+      <End Role="question" EntitySet="questions" />
+      <End Role="response" EntitySet="responses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -760,11 +760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.iOS\\QuizzMotorsport.iOS.csproj",
+      "projectUniqueName": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.iOS\\QuizzMotorsport.iOS.csproj",
       "projectName": "QuizzMotorsport.iOS",
-      "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.iOS\\QuizzMotorsport.iOS.csproj",
+      "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.iOS\\QuizzMotorsport.iOS.csproj",
       "packagesPath": "C:\\Users\\Arnaud\\.nuget\\packages\\",
-      "outputPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.iOS\\obj\\",
+      "outputPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -785,8 +785,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj": {
-              "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj"
+            "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj": {
+              "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj"
             }
           }
         }

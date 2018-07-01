@@ -6761,11 +6761,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.UWP\\QuizzMotorsport.UWP.csproj",
+      "projectUniqueName": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.UWP\\QuizzMotorsport.UWP.csproj",
       "projectName": "QuizzMotorsport.UWP",
-      "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.UWP\\QuizzMotorsport.UWP.csproj",
+      "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.UWP\\QuizzMotorsport.UWP.csproj",
       "packagesPath": "C:\\Users\\Arnaud\\.nuget\\packages\\",
-      "outputPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.UWP\\obj\\",
+      "outputPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -6786,8 +6786,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj": {
-              "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj"
+            "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj": {
+              "projectPath": "D:\\QuizzProject\\QuizzMotorsport\\QuizzMotorsport\\QuizzMotorsport.csproj"
             }
           }
         }
